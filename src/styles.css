@@ -159,6 +159,11 @@ body {
   box-shadow: 0 8px 14px rgba(0, 0, 0, 0.18);
 }
 
+.piece.hidden {
+  opacity: 0;
+  box-shadow: none;
+}
+
 .piece.white {
   color: var(--ink);
   background: linear-gradient(180deg, #fff9ed 0%, #f0e1bf 100%);
@@ -207,6 +212,14 @@ body {
   padding: 10px 12px;
   border-radius: 14px;
   background: rgba(27, 45, 40, 0.08);
+}
+
+.status-pill.danger {
+  background: rgba(184, 95, 61, 0.18);
+}
+
+.status-pill.safe {
+  background: rgba(36, 108, 50, 0.18);
 }
 
 .status-pill strong,
