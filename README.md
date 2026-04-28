@@ -19,20 +19,23 @@
 - Press `Enter` to start the match.
 - Click one of your pieces, then click a highlighted target square to make a move.
 - Press `P` to pause the clocks and `R` to reset the board.
+- Press `Enter` again after a finished game to start a fresh rematch from the standard setup.
 
 ## Rules
 - Standard local two-player chess rules apply, including castling, en passant, check, checkmate, and stalemate detection.
 - The active player's clock counts down whenever the match is running.
 - Illegal moves that leave your king in check are rejected.
+- White and black both begin with a 90-second blitz clock.
 
 ## Scoring
 - Captured material awards score by classic piece value.
 - Delivering check and checkmate awards bonus score.
 - Remaining clock time converts into a final time-attack bonus for the winner.
+- Winning on time still awards the stored material score plus a flat blitz bonus.
 
 ## Twist
 - **Time Attack Chess**: both sides race against a short blitz clock instead of an unlimited board-game pace.
-- Each move grants a small time increment, while captures award an extra clock bonus to keep the attack alive.
+- Each move grants a 1-second increment, while captures award an extra 2.5-second clock bonus to keep the attack alive.
 
 ## Verification
 - `pnpm test`
@@ -41,6 +44,7 @@
 - Browser hooks:
   - `window.advanceTime(ms)`
   - `window.render_game_to_text()`
+- Scripted route: a deterministic Scholar's Mate line that ends with `Qh5xf7#`
 
 ## Project Layout
 - `src/` game loop, board UI, and deterministic chess rules engine
